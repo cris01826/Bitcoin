@@ -21,4 +21,18 @@ export class BitcoinServiceService {
         throw err.response.data;
       });
   }
+
+  getHistoricalBitcoin(id: string) {
+    return axios
+      .get(
+        environment.apiURL +
+          "coins/" +
+          id +
+          "/market_chart?vs_currency=usd&days=15&interval=daily"
+      )
+      .then((res) => res.data)
+      .catch((err) => {
+        throw err.response.data;
+      });
+  }
 }

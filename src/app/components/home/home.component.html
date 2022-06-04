@@ -1,1 +1,17 @@
-<p>home works!</p>
+<p>${{ btc }}</p>
+
+<div class="details">
+  <div class="grid">
+    <div class="col-4">Fecha</div>
+    <div class="col-4">Moneda</div>
+    <div class="col-4">Precio de cierre</div>
+  </div>
+
+  <div class="detail-btc">
+    <div class="grid" *ngFor="let btc of detail_btc">
+        <div class="col-4">{{btc.date}}</div>
+        <div class="col-4">{{btc.currenc}}</div>
+        <div class="col-4">{{btc.price}}</div>
+      </div>
+  </div>
+</div>
