@@ -1,17 +1,27 @@
-<p>${{ btc }}</p>
-
-<div class="details">
-  <div class="grid">
-    <div class="col-4">Fecha</div>
-    <div class="col-4">Moneda</div>
-    <div class="col-4">Precio de cierre</div>
+<div class="content">
+  <div class="btc">
+    <p>Precio Bitcoin</p>
+    <img
+      src="https://www.knowyourmobile.com/wp-content/uploads/2021/08/current-bitcoin-logo.png"
+      alt="btc"
+      width="50px"
+    />
+    <p class="text-btc">1 BTC = USD ${{ btc }}</p>
   </div>
+  <h5>Precio de cierre del Bitcoin ultimos 15 días</h5>
+  <div class="details">
+    <div class="grid">
+      <div class="col-4 title">Fecha</div>
+      <div class="col-4 title">Moneda</div>
+      <div class="col-4 title">Precio de cierre</div>
+    </div>
 
-  <div class="detail-btc">
-    <div class="grid" *ngFor="let btc of detail_btc">
-        <div class="col-4">{{btc.date}}</div>
-        <div class="col-4">{{btc.currenc}}</div>
-        <div class="col-4">{{btc.price}}</div>
+    <div class="detail-btc">
+      <div class="grid item" *ngFor="let btc of detail_btc">
+        <div class="col-4">{{ btc.date }}</div>
+        <div class="col-4">{{ btc.currenc }}</div>
+        <div class="col-4">${{ btc.price }}</div>
       </div>
+    </div>
   </div>
 </div>
