@@ -1,1 +1,20 @@
-<p>details works!</p>
+<div class="content">
+  <div class="btc">
+    <div class="grid">
+      <div class="col-2">
+        <div class="back" routerLink="/home">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </div>
+      </div>
+      <div class="col-10">
+        <p class="title">Detalles día {{ date }}</p>
+      </div>
+    </div>
+    <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+    <div class="details" *ngIf="!loading">
+        <p>Dolar: $ {{usd}}</p>
+        <p>Euro: € {{eur}}</p>
+        <p>Peso Colombiano: $ {{cop}}</p>
+    </div>
+  </div>
+</div>

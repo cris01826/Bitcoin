@@ -1,6 +1,12 @@
 .content {
+  background-image: url("https://cutewallpaper.org/27/bitcoin-wallpaper-for-iphone/372615887.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: fixed;
   padding: 25px;
   .btc {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
     border-radius: 10px;
     border: 1px solid #dadada;
@@ -9,9 +15,17 @@
       0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   }
 }
+.description {
+  text-align: center;
+  font-weight: 700;
+  margin: 14px 2px;
+  color: #2c0961;
+}
 .title {
+  text-align: center;
   color: #5354a0;
   font-weight: 700;
+  font-size: 15px;
 }
 .text-btc {
   font-size: 18px;
@@ -19,8 +33,11 @@
   color: #5354a0;
 }
 .details {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.7);
   margin-top: 10px;
   padding: 15px;
+  padding-top: 5px;
   border-radius: 10px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
     0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -30,7 +47,10 @@
   margin-bottom: 5px;
   border-radius: 7px;
   padding-top: 10px;
+  font-size: 12px;
+  text-align: center;
 }
 .item:hover {
-  background-color: #c5c5c5;
+  background-color: #5354a0;
+  color: #c5c5c5;
 }

@@ -8,8 +8,9 @@
     />
     <p class="text-btc">1 BTC = USD ${{ btc }}</p>
   </div>
-  <h5>Precio de cierre del Bitcoin ultimos 15 días</h5>
+  
   <div class="details">
+    <h5 class="description">Precio de cierre del Bitcoin últimos 15 días</h5>
     <div class="grid">
       <div class="col-4 title">Fecha</div>
       <div class="col-4 title">Moneda</div>
@@ -17,7 +18,7 @@
     </div>
 
     <div class="detail-btc">
-      <div class="grid item" *ngFor="let btc of detail_btc">
+      <div class="grid item" (click)="details(btc.date_unix)" *ngFor="let btc of detail_btc">
         <div class="col-4">{{ btc.date }}</div>
         <div class="col-4">{{ btc.currenc }}</div>
         <div class="col-4">${{ btc.price }}</div>

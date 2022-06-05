@@ -1,4 +1,5 @@
 import { Component, NgZone, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import * as moment from "moment";
 import { BitcoinServiceService } from "src/app/services/bitcoin-service.service";
 
@@ -10,10 +11,11 @@ import { BitcoinServiceService } from "src/app/services/bitcoin-service.service"
 export class HomeComponent implements OnInit {
   constructor(
     private bitcoinService: BitcoinServiceService,
-    public ngzone: NgZone
+    private ngzone: NgZone,
+    private router:Router
   ) {}
 
-  public btc:any;
+  public btc: any;
   public detail_btc = [];
   ngOnInit() {
     this.getBitcoin();
@@ -51,14 +53,15 @@ export class HomeComponent implements OnInit {
               price: Intl.NumberFormat().format(Math.round(prices[1])),
             });
           }
-          this.ngzone.run(()=>{
-            this.detail_btc.sort(
-              (a, b) => parseInt(a.date_unix) - parseInt(b.date_unix)
-            );
-          })
-          
+
+          this.detail_btc.sort((a, b) => b.date_unix - a.date_unix);
+
           console.log("detalle", this.detail_btc);
         });
     } catch (error) {}
+  }
+  public details(date) {
+    console.log(date);
+    this.router.navigate(["details/" + date]);
   }
 }

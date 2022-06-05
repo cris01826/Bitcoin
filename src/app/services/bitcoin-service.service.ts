@@ -35,4 +35,18 @@ export class BitcoinServiceService {
         throw err.response.data;
       });
   }
+
+  getDetailBitcoin(date: string) {
+    return axios
+      .get(
+        environment.apiURL +
+          "coins/bitcoin/history?date=" +
+          date +
+          "&localization=false"
+      )
+      .then((res) => res.data)
+      .catch((err) => {
+        throw err.response.data;
+      });
+  }
 }
